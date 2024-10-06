@@ -6,11 +6,11 @@
  * */
 import java.util.Scanner; 
 
-public class L3Array {
+public class L2Array {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        L3Array L = new L3Array();  
+        L2Array L = new L2Array();  
         L.noDuplicates();  
         L.randomNoDuplicates(); 
     } 

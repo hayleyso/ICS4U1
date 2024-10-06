@@ -4,7 +4,6 @@
  * Date: 09/18/2024
  * JDK version: 22.02
  */
-
  import java.util.Scanner;
  import java.io.File;
  import java.io.FileNotFoundException;
@@ -13,7 +12,7 @@
     
     // Main method 
      public static void main(String[] args) {
-         Array41 A = new Array41();
+         L3Array A = new L3Array();
          int[][] array;
  
          try {

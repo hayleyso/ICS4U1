@@ -4,16 +4,15 @@
  * Date: 09/18/2024
  * JDK version: 22.02
  * */
-
  import java.io.File;
  import java.io.FileNotFoundException;
  import java.util.Scanner;
  
- public class Array42 {
+ public class L4Array {
  
     // Main method
      public static void main(String[] args) throws FileNotFoundException {
-         Array42 A = new Array42();
+         L4Array A = new L4Array();
          File file = new File("C:\\Users\\hayle\\Downloads\\marks_input.txt");
          Scanner sc = new Scanner(file);
  
