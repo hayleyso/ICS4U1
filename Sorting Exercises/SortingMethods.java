@@ -11,15 +11,15 @@ public class SortingMethods {
 
         while (true) {
             System.out.println("\n--------HAYLEY'S SORTING EXERCISES MAIN MENU--------");
-            System.out.println("    Would you like to sort the array using:");
-            System.out.println("          1. Bubble sort");
-            System.out.println("          2. Improved Bubble Sort");
-            System.out.println("          3. Selection Sort");
-            System.out.println("          4. Insertion Sort");
-            System.out.println("          5. Quick Sort");
-            System.out.println("          6. Merge Sort");
-            System.out.println("          7. Heap Sort");
-            System.out.println("          8. Exit the program");
+            System.out.println("Plase select a sorting algorithm:\n" +
+                               "    1. Bubble sort\n" +
+                               "    2. Improved Bubble Sort\n" +
+                               "    3. Selection Sort\n" +
+                               "    4. Insertion Sort\n" +
+                               "    5. Quick Sort\n" +
+                               "    6. Merge Sort\n" +
+                               "    7. Heap Sort\n" +
+                               "    8. Exit the program");
             System.out.print("Enter # of desired action: ");
             String option = sc.nextLine();
 

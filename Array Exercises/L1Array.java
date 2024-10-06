@@ -13,22 +13,22 @@ public class L1Array {
         initializeArray(list);
         enterFromKeyboard(list);
 
-        while (true) {      
+        while (true) {
             System.out.println();
             System.out.println("--------HAYLEY'S ARRAY EXERCISES MAIN MENU--------");
-            System.out.println("     Would you like to:");
-            System.out.println("          1. Count the # of whole numbers in the array");
-            System.out.println("          2. Display the numbers in the array in the order entered");
-            System.out.println("          3. Display the numbers in the array in reverse");
-            System.out.println("          4. Find the sum of the numbers in the array");
-            System.out.println("          5. Find the average of the numbers in the array");
-            System.out.println("          6. Find the maximum number in the array");
-            System.out.println("          7. Find the minimum number in the array");
-            System.out.println("          8. Search the array for a number");
-            System.out.println("          9. Sort the array using bubble sort");
-            System.out.println("          10. Sort the array using an improved bubble sort method");
-            System.out.println("          11. Exit the program");
-            System.out.print("Enter # of desired action: ");
+            System.out.println("     Would you like to:\n" +
+                               "          1. Count the # of whole numbers in the array\n" +
+                               "          2. Display the numbers in the array in the order entered\n" +
+                               "          3. Display the numbers in the array in reverse\n" +
+                               "          4. Find the sum of the numbers in the array\n" +
+                               "          5. Find the average of the numbers in the array\n" +
+                               "          6. Find the maximum number in the array\n" +
+                               "          7. Find the minimum number in the array\n" +
+                               "          8. Search the array for a number\n" +
+                               "          9. Sort the array using bubble sort\n" +
+                               "          10. Sort the array using an improved bubble sort method\n" +
+                               "          11. Exit the program");
+            System.out.print("Enter # of desired action: ");        
             String option = sc.nextLine(); 
             switch (option) {  
                 case "1":
