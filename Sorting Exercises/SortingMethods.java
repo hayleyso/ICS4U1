@@ -160,4 +160,8 @@ public class SortingMethods {
         arr[i] = arr[j];
         arr[j] = temp;
     }
+
+    public static void mergeSort(int[] list) {
+
+    }
 }
