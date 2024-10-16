@@ -2,10 +2,9 @@ import java.util.Scanner;
 
 public class SortingMethods {
     static Scanner sc = new Scanner(System.in);
-    static final int MAX = 10;
 
     public static void main(String[] args) {
-        int[] list = new int[MAX];
+        int[] list = new int[10];
 
         enterFromKeyboard(list);
 
@@ -41,7 +40,7 @@ public class SortingMethods {
                     display(list, true);
                     break;
                 case "5":
-                    quickSort(list, 0, MAX - 1);
+                    quickSort(list, 0, list.length - 1);
                     display(list, true);
                     break;
                 case "8":
@@ -54,10 +53,10 @@ public class SortingMethods {
     }
 
     public static void enterFromKeyboard(int[] list) {
-        for (int i = 0; i < MAX; i++) {
+        for (int i = 0; i < list.length; i++) {
             boolean validInput = false;
             while (!validInput) {
-                System.out.print("Please enter an integer " + (i + 1) + "/" + MAX + ": ");
+                System.out.print("Please enter an integer " + (i + 1) + "/" + list.length + ": ");
                 try {
                     list[i] = Integer.parseInt(sc.nextLine());
                     validInput = true;
@@ -70,16 +69,16 @@ public class SortingMethods {
 
     public static void display(int[] list, boolean sorted) {
         System.out.print(sorted ? "The integers in ascending order are: " : "The integers in order entered are: ");
-        for (int i = 0; i < MAX; i++) {
-            System.out.print(list[i] + (i < MAX - 1 ? ", " : "."));
+        for (int i = 0; i < list.length; i++) {
+            System.out.print(list[i] + (i < list.length - 1 ? ", " : "."));
         }
         System.out.println();
     }
 
     // Bubble Sort
     public static void bubbleSort(int[] list) {
-        for (int i = 0; i < MAX - 1; i++) {
-            for (int j = 0; j < MAX - 1 - i; j++) {
+        for (int i = 0; i < list.length - 1; i++) {
+            for (int j = 0; j < list.length - 1 - i; j++) {
                 if (list[j] > list[j + 1]) {
                     swap(list, j, j + 1);
                 }
@@ -90,9 +89,9 @@ public class SortingMethods {
     // Improved Bubble Sort
     public static void improvedBubbleSort(int[] list) {
         boolean swapped;
-        for (int i = 0; i < MAX - 1; i++) {
+        for (int i = 0; i < list.length - 1; i++) {
             swapped = false;
-            for (int j = 0; j < MAX - 1 - i; j++) {
+            for (int j = 0; j < list.length - 1 - i; j++) {
                 if (list[j] > list[j + 1]) {
                     swap(list, j, j + 1);
                     swapped = true;
@@ -104,9 +103,9 @@ public class SortingMethods {
 
     // Selection Sort
     public static void selectionSort(int[] list) {
-        for (int i = 0; i < MAX - 1; i++) {
+        for (int i = 0; i < list.length - 1; i++) {
             int minIndex = i;
-            for (int j = i + 1; j < MAX; j++) {
+            for (int j = i + 1; j < list.length; j++) {
                 if (list[j] < list[minIndex]) {
                     minIndex = j;
                 }
@@ -117,7 +116,7 @@ public class SortingMethods {
 
     // Insertion Sort
     public static void insertionSort(int[] list) {
-        for (int i = 1; i < MAX; i++) {
+        for (int i = 1; i < list.length; i++) {
             int currValue = list[i];
             int j = i - 1;
             while (j >= 0 && list[j] > currValue) {
@@ -162,6 +161,87 @@ public class SortingMethods {
     }
 
     public static void mergeSort(int[] list) {
-
+        if (list.length < 2) {
+            return; // Base case: if the array has less than 2 elements, it's already sorted
+        }
+        
+        int mid = list.length / 2;
+        int[] left = new int[mid];
+        int[] right = new int[list.length - mid];
+        
+        // Split the array into left and right halves
+        for (int i = 0; i < mid; i++) {
+            left[i] = list[i];
+        }
+        for (int i = mid; i < list.length; i++) {
+            right[i - mid] = list[i];
+        }
+        
+        // Recursively sort both halves
+        mergeSort(left);
+        mergeSort(right);
+        
+        // Merge the sorted halves
+        merge(list, left, right);
     }
+    
+    private static void merge(int[] list, int[] left, int[] right) {
+        int i = 0, j = 0, k = 0;
+    
+        // Merge the two arrays
+        while (i < left.length && j < right.length) {
+            if (left[i] <= right[j]) {
+                list[k++] = left[i++];
+            } else {
+                list[k++] = right[j++];
+            }
+        }
+    
+        // Copy remaining elements from left array 
+        while (i < left.length) {
+            list[k++] = left[i++];
+        }
+    
+        // Copy remaining elements from right array 
+        while (j < right.length) {
+            list[k++] = right[j++];
+        }
+    }
+    
+    public static void heapSort(int[] list) {
+        int n = list.length;
+    
+        // Build heap (rearrange array)
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            heapify(list, n, i);
+        }
+    
+        // One by one extract elements from heap
+        for (int i = n - 1; i >= 0; i--) {
+            // Move current root to end
+            swap(list, 0, i);
+            heapify(list, i, 0);
+        }
+    }
+    
+    // Helper method to maintain the heap property
+    private static void heapify(int[] list, int n, int i) {
+        int largest = i; 
+        int left = 2 * i + 1;
+        int right = 2 * i + 2; 
+    
+        if (left < n && list[left] > list[largest]) {
+            largest = left;
+        }
+    
+        if (right < n && list[right] > list[largest]) {
+            largest = right;
+        }
+    
+        if (largest != i) {
+            swap(list, i, largest);
+            heapify(list, n, largest);
+        }
+    }
+    
 }
