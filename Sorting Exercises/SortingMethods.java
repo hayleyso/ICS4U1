@@ -118,9 +118,9 @@ public class SortingMethods {
     public static void insertionSort(int[] list) {
         for (int i=1; i<list.length; i++) {
             int currValue = list[i];
-            int j = i-1;
+            int j = i - 1;
             while (j >= 0 && list[j] > currValue) {
-                list[j+1] = list[j];
+                list[j + 1] = list[j];
                 j--;
             }
             list[j + 1] = currValue;

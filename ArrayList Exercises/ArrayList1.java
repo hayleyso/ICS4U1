@@ -15,26 +15,11 @@ public class ArrayList1 {
     public static void main(String[] args) {
 
         ArrayList<Integer> list = new ArrayList<Integer>();
-        initializeArrayList(list);
         enterFromKeyboard(list);
 
         while (true) {
-            System.out.println();
-            System.out.println("--------HAYLEY'S ARRAYLIST EXERCISES MAIN MENU--------");
-            System.out.println("     Would you like to:\n" +
-                    "          1. Count the # of whole numbers\n" +
-                    "          2. Display in the order entered\n" +
-                    "          3. Display in reverse\n" +
-                    "          4. Find the sum\n" +
-                    "          5. Find the average\n" +
-                    "          6. Find the maximum number\n" +
-                    "          7. Find the minimum number\n" +
-                    "          8. Find the occurence and position of a number\n" +
-                    "          9. Sort the ArrayList using improved bubble sort\n" +
-                    "          10. Sort the ArrayList using insertion sort\n" +
-                    "          11. Exit the program");
-            System.out.print("Enter # of desired action: ");
-            String option = sc.nextLine();
+            showMenu();
+            String option = sc.nextLine().trim();
             switch (option) {
                 case "1":
                     countWhole(list);
@@ -46,7 +31,8 @@ public class ArrayList1 {
                     displayReverse(list);
                     break;
                 case "4":
-                    sum(list);
+                    int sum = sum(list);
+                    System.out.println("The sum of the elements is " + sum);
                     break;
                 case "5":
                     average(list);
@@ -66,26 +52,41 @@ public class ArrayList1 {
                 case "10":
                     insertionSort(list);
                     break;
-                case "11":
-                    System.out.println("Thank you.");
-                    return;
                 default:
                     System.out.println("Invalid input. Please try again.");
-                    break;
+            }
+
+            System.out.print("Would you like to return to the menu? (y/n): ");
+            String returnOption = sc.nextLine();
+            if (!returnOption.equalsIgnoreCase("y")) {
+                System.out.println("Thank you for using the program!");
+                break;
             }
         }
     }
-
-    public static void initializeArrayList(ArrayList<Integer> list) {
-        for (int i = 0; i < list.size(); i++) {
-            list.set(i, -1);
-        }
+    
+    public static void showMenu() {
+        System.out.println();
+        System.out.println("--------HAYLEY'S ARRAYLIST EXERCISES MAIN MENU--------");
+        System.out.println("     Would you like to:\n" +
+                "          1. Count the # of whole numbers\n" +
+                "          2. Display in the order entered\n" +
+                "          3. Display in reverse\n" +
+                "          4. Find the sum\n" +
+                "          5. Find the average\n" +
+                "          6. Find the maximum number\n" +
+                "          7. Find the minimum number\n" +
+                "          8. Find the occurrence and position of a number\n" +
+                "          9. Sort the ArrayList using improved bubble sort\n" +
+                "          10. Sort the ArrayList using insertion sort");
+        System.out.print("Enter # of desired action: ");
     }
 
     public static void enterFromKeyboard(ArrayList<Integer> list) {
         for (int i = 0; i < 10; i++) {
             System.out.print("Please enter an integer: ");
             list.add(i, sc.nextInt());
+            sc.nextLine();  // Clear buffer
         }
     }
 
@@ -111,19 +112,18 @@ public class ArrayList1 {
         }
     }
 
-    public static double sum(ArrayList<Integer> list) {
-        double sum = 0;
+    public static int sum(ArrayList<Integer> list) {
+        int sum = 0;
         for (int i = 0; i < list.size(); i++) {
             sum += list.get(i);
         }
-        System.out.println("The sum of the elements is " + sum);
         return sum;
 
     }
 
     public static void average(ArrayList<Integer> list) {
-        DecimalFormat format = new DecimalFormat("0.00"); 
-        double sum = sum(list);
+        DecimalFormat format = new DecimalFormat("0.0"); 
+        int sum = sum(list);
         System.out.println("The average of the elements is " + format.format(sum / list.size()));
     }
 
@@ -182,6 +182,10 @@ public class ArrayList1 {
             if (!swapped)
                 break;
         }
+        System.out.print("The sorted list using improved bubble sort: ");
+        display(list);
+        System.out.println();
+        
     }
 
     public static void swap(ArrayList<Integer> list, int i, int j) {
@@ -200,6 +204,9 @@ public class ArrayList1 {
             }
             list.set(j + 1, currValue);
         }
+        System.out.print("The sorted list using insertion sort: ");
+        display(list);
+        System.out.println();
     }
 
 }
