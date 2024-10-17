@@ -1,3 +1,10 @@
+/* Author: Hayley So
+ * Description: Array Exercise for ICS4U1 class.
+ * Purpose: To perform various operations on an array of integers.
+ * Date: 09/18/2024
+ * JDK version: 22.02
+ */
+
 import java.util.*;
 import java.text.DecimalFormat; 
 
@@ -75,16 +82,16 @@ public class L1Array {
     } 
 
     public static void initializeArray(int[] list) {
-        for (int i = 0; i < MAX; i++) {
+        for (int i = 0; i < list.length; i++) {
             list[i] = -1;  
         } 
     }
 
     public static void enterFromKeyboard(int[] list) {
-        for (int i = 0; i < MAX; i++) { 
+        for (int i = 0; i < list.length; i++) { 
             boolean validInput = false; 
             while (!validInput) {   
-                System.out.print("Please enter an integer " + (i + 1) + "/" + MAX + ": ");
+                System.out.print("Please enter an integer " + (i + 1) + "/" + list.length + ": ");
                 try {   
                     list[i] = Integer.parseInt(sc.nextLine());
                     validInput = true; 
@@ -97,7 +104,7 @@ public class L1Array {
 
     public static void countWhole(int[] list) {
         int counter = 0;   
-        for (int i = 0; i < MAX; i++) {    
+        for (int i = 0; i < list.length; i++) {    
             if (list[i] > 0) { 
                 counter++; 
             }
@@ -113,7 +120,7 @@ public class L1Array {
             System.out.print("The integers in order entered are: ");
         }
 
-        for (int i = 0; i < MAX; i++) { 
+        for (int i = 0; i < list.length; i++) { 
             if (i < MAX - 1) {
                 System.out.print(list[i] + ", ");
             } else {   
@@ -138,7 +145,7 @@ public class L1Array {
 
     public static int sum(int[] list) {
         int sum = 0;  
-        for (int i = 0; i < MAX; i++) {
+        for (int i = 0; i < list.length; i++) {
             sum += list[i];
         }
         return sum;
@@ -146,7 +153,7 @@ public class L1Array {
 
     public static void average(int[] list, int sum) {
         DecimalFormat format = new DecimalFormat("0.0"); 
-        double average = (double) sum / MAX;    
+        double average = (double) sum / list.length;    
 
         if (average % 1 == 0) { 
             System.out.println("The average of the numbers in the array is " + average + ".");
@@ -157,7 +164,7 @@ public class L1Array {
 
     public static void findMax(int[] list) {
         int max = list[0];  
-        for (int i = 0; i < MAX; i++) { 
+        for (int i = 0; i < list.length; i++) { 
             if (list[i] > max) {   
                 max = list[i];  
             }
@@ -167,7 +174,7 @@ public class L1Array {
 
     public static void findMin(int[] list) {
         int min = list[0]; 
-        for (int i = 0; i < MAX; i++) { 
+        for (int i = 0; i < list.length; i++) { 
             if (list[i] < min) {    
                 min = list[i]; 
             }
@@ -188,7 +195,7 @@ public class L1Array {
 
                 boolean found = false;  
 
-                for (int i = 0; i < MAX; i++) { 
+                for (int i = 0; i < list.length; i++) { 
                     if (list[i] == numSearch) { 
                         if (!found) {
                             System.out.print("The number " + numSearch + " is found in the following position(s): ");
@@ -211,10 +218,10 @@ public class L1Array {
     public static int[] sort(int[] list) {
         int[] sortedList = new int[MAX]; 
 
-        System.arraycopy(list, 0, sortedList, 0, MAX); 
+        System.arraycopy(list, 0, sortedList, 0, list.length); 
 
-        for (int i = 0; i < MAX - 1; i++) {
-            for (int j = 0; j < MAX - 1 - i; j++) {
+        for (int i = 0; i < list.length - 1; i++) {
+            for (int j = 0; j < list.length - 1 - i; j++) {
                 if (sortedList[j] > sortedList[j + 1]) {
                     int temp = sortedList[j];
                     sortedList[j] = sortedList[j + 1];
@@ -234,7 +241,7 @@ public class L1Array {
  
         while (swapped) { 
             swapped = false;   
-            for (int j = 0; j < MAX - 1 - i; j++) { 
+            for (int j = 0; j < list.length - 1 - i; j++) { 
                 if (sortedList[j] > sortedList[j + 1]) {   
                     temp = sortedList[j];
                     sortedList[j] = sortedList[j + 1];

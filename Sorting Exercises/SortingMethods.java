@@ -105,7 +105,7 @@ public class SortingMethods {
     public static void selectionSort(int[] list) {
         for (int i = 0; i < list.length - 1; i++) {
             int minIndex = i;
-            for (int j = i + 1; j < list.length; j++) {
+            for (int j=1+i; j < list.length; j++) {
                 if (list[j] < list[minIndex]) {
                     minIndex = j;
                 }
@@ -116,11 +116,11 @@ public class SortingMethods {
 
     // Insertion Sort
     public static void insertionSort(int[] list) {
-        for (int i = 1; i < list.length; i++) {
+        for (int i=1; i<list.length; i++) {
             int currValue = list[i];
-            int j = i - 1;
+            int j = i-1;
             while (j >= 0 && list[j] > currValue) {
-                list[j + 1] = list[j];
+                list[j+1] = list[j];
                 j--;
             }
             list[j + 1] = currValue;
@@ -177,7 +177,6 @@ public class SortingMethods {
             right[i - mid] = list[i];
         }
         
-        // Recursively sort both halves
         mergeSort(left);
         mergeSort(right);
         
