@@ -1,6 +1,6 @@
 /* Author: Hayley So
- * Description: Array Exercise for ICS4U1 class.
- * Purpose: To perform various operations on an array of integers.
+ * Description: ArrayList Exercise for ICS4U1 class
+ * Purpose: To perform various operations on an array of integers
  * Date: 10/21/2024
  * JDK version: 22.02
  */
