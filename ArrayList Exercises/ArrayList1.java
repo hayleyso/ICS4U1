@@ -1,4 +1,4 @@
-/* Author: Hayley So
+/* /* /* Author: Hayley So
  * Description: ArrayList Exercise for ICS4U1 class
  * Purpose: To perform various operations on an array of integers
  * Date: 10/21/2024
@@ -56,11 +56,14 @@ public class ArrayList1 {
                     System.out.println("Invalid input. Please try again.");
             }
 
-            System.out.print("Would you like to return to the menu? (y/n): ");
-            String returnOption = sc.nextLine();
-            if (!returnOption.equalsIgnoreCase("y")) {
+            System.out.println("Would you like to return to the menu? (y/n): ");
+            String returnOption = sc.nextLine().trim().toLowerCase();
+            if (returnOption.equals("n")) {
                 System.out.println("Thank you for using the program!");
                 break;
+            } else if (!returnOption.equals("y")) {
+                System.out.println("Invalid input. Please enter 'y' or 'n'.");
+                continue; 
             }
         }
     }
@@ -76,7 +79,7 @@ public class ArrayList1 {
                 "          5. Find the average\n" +
                 "          6. Find the maximum number\n" +
                 "          7. Find the minimum number\n" +
-                "          8. Find the occurrence and position of a number\n" +
+                "          8. Search the array for a number\n" +
                 "          9. Sort the ArrayList using improved bubble sort\n" +
                 "          10. Sort the ArrayList using insertion sort");
         System.out.print("Enter # of desired action: ");
@@ -104,12 +107,14 @@ public class ArrayList1 {
         for (int i = 0; i < list.size(); i++) {
             System.out.print(list.get(i) + " ");
         }
+        System.out.println();
     }
 
     public static void displayReverse(ArrayList<Integer> list) {
         for (int i = list.size() - 1; i >= 0; i--) {
             System.out.print(list.get(i) + " ");
         }
+        System.out.println();
     }
 
     public static int sum(ArrayList<Integer> list) {
@@ -118,7 +123,6 @@ public class ArrayList1 {
             sum += list.get(i);
         }
         return sum;
-
     }
 
     public static void average(ArrayList<Integer> list) {
@@ -150,23 +154,25 @@ public class ArrayList1 {
     public static void search(ArrayList<Integer> list) {
         System.out.print("Please enter a search item: ");
         int search = sc.nextInt();
-        boolean isFound = false;
-        System.out.print("The number " + search + " is found in the following position(s): ");
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) == search) {
-                if (isFound) {
-                    System.out.print(", "); 
+        sc.nextLine();
+        if (list.contains(search)) {
+            System.out.print("The number " + search + " is found in the following position(s): ");
+            boolean isFirst = true;
+            
+            for (int i = 0; i < list.size(); i++) {
+                if (list.get(i) == search) {
+                    if (!isFirst) {
+                        System.out.print(", "); 
+                    }
+                    System.out.print(i); 
+                    isFirst = false; 
                 }
-                System.out.print(i); 
-                isFound = true; 
             }
+            System.out.println();
         }
-        if (!isFound) {
-            System.out.println("The number " + search + " was not found in the array.");
-        } else {
-            System.out.println(); 
+        else {
+            System.out.println("The number " + search + " is not found in the array.");
         }
-
     }
 
     public static void improvedBubbleSort(ArrayList<Integer> list) {
@@ -209,4 +215,4 @@ public class ArrayList1 {
         System.out.println();
     }
 
-}
+}  
