@@ -10,10 +10,10 @@ public class Factorial {
     }
 
     public static double Fact(int iNum) {
-        if (iNum<=1) {
+        if (iNum <= 1) {
             return 1;
         } else {
-            return iNum*Fact(iNum-1);
+            return iNum * Fact(iNum-1);
         }
     }
 }

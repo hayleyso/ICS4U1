@@ -13,12 +13,18 @@ public class GreatestCommonFactor {
         System.out.printf("The GCF of %d and %d is %d", num1, num2, GCF(num1, num2));
     }
 
+    // Recursive method to find the greatest common factor of two integers
     public static int GCF(int a, int b) {
-        if (a==b) {
+        // Base case
+        if (a == b) {
             return a;
-        } else if(a>b) {
+        }
+        
+        else if (a > b) {
             return GCF(b, a-b);
-        } else {   
+        }
+        
+        else {   
             return GCF(b, a);
         }
     }

@@ -1,4 +1,4 @@
-/* /* /* Author: Hayley So
+/* Author: Hayley So
  * Description: ArrayList Exercise for ICS4U1 class
  * Purpose: To perform various operations on an array of integers
  * Date: 10/21/2024
