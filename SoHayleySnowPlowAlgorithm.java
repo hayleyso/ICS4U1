@@ -65,7 +65,7 @@ public class SoHayleySnowPlowAlgorithm {
             // Check if user wants to repeat program
             while (true) {
                 // Prompt user to repeat or exit
-                System.out.println("Would you like to clear snow on another grid? <Y/N>");
+                System.out.println("Would you like to clear snow on another grid? <'Y'/'N'>");
                 String repeat = sc.next();  // Accept user input
                 if (repeat.equalsIgnoreCase("N")) {
                     System.out.println("Program terminated. Thank you for using the snow plow algorithm!");
@@ -74,7 +74,7 @@ public class SoHayleySnowPlowAlgorithm {
                 } else if (repeat.equalsIgnoreCase("Y")) {
                     break;
                 } else {
-                    // Error message for invalid input3
+                    // Error message for invalid input
                     System.out.println("Invalid input. Please enter 'Y' to clear snow on another grid or 'N' to exit.");
                 }
             }
@@ -136,7 +136,7 @@ public class SoHayleySnowPlowAlgorithm {
         }
         arr[x][y] = 0; // Clear current cell
 
-        display(arr); // Display grid after clearing
+        display(arr); // Display grid as snow is being cleared
         Thread.sleep(500); // Pause for 1 second before clearing next cell
 
         // Recursively clear all eight surrounding positions
