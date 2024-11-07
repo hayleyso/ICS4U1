@@ -16,8 +16,6 @@ public class SearchingExercise2 {
 
     // create Scanner object to read user input
     static Scanner sc = new Scanner(System.in);
-    // create constant variable to store the size of the two arrays
-    static final int SIZE = 5;
     // create constant variable to store the file path
     private static final String FILE_PATH = "C:\\Users\\hayle\\ICS4U1\\Binary Search\\wordlist.txt";
 
@@ -82,7 +80,7 @@ public class SearchingExercise2 {
                     System.out.println("Invalid choice. Please enter 1 for iterative or 2 for recursive.");
                 }
                 // display if the word is found in the file
-                System.out.println(found ? "The word '" + searchWord + "' was  found in the file."
+                System.out.println(found ? "The word '" + searchWord + "' was found in the file."
                         : "The word '" + searchWord + "' was not found in the file.");
                 System.out.println();
                 break;  // exit the first inner loop
@@ -203,5 +201,14 @@ public class SearchingExercise2 {
         }
         return false; // value not found
     }
+
+    /* Record your observations in terms of running time. Did you notice any difference?
+     * Th recursive search approach is consistently faster than the iterative search approach. For example, for the word "video",
+     * the iterative search took 20 ms, while the recursive search took 0 ms. This could be due to system caching or measurement differences.
+     * 
+     * What are some of your conclusions based on the run time?
+     * Iterative search is generally more consistent and scales better, especially for larger datasets.
+     * 
+     */
 
 } // end SearchingExercise2 class
