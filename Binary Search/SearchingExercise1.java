@@ -145,10 +145,10 @@ public class SearchingExercise1 {
                 return true; // value found
             } else if (name[mid].compareTo(searchName) < 0) {
                 // check if the name is in the right half of the array
-                return recursiveBinarySearch(name, searchName, mid + 1, high);
+                return binarySearch(name, searchName, mid + 1, high);
             } else {
                 // check if the name is in the left half of the array
-                return recursiveBinarySearch(name, searchName, low, mid - 1);
+                return binarySearch(name, searchName, low, mid - 1);
             }
         }
         return false; // value not found
