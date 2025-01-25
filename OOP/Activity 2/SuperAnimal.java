@@ -1,17 +1,15 @@
-// SuperAnimal.java
 public class SuperAnimal extends Animal {
     private boolean hasWings;
     private boolean canTeleport;
     private boolean canSwim;
 
     public SuperAnimal(String name, String species, int age, boolean isDomesticated, boolean hasWings, boolean canTeleport, boolean canSwim) {
-        super("SuperAnimal", species, name, age, isDomesticated);  // Call the Animal constructor
+        super("SuperAnimal", species, name, age, isDomesticated);  
         this.hasWings = hasWings;
         this.canTeleport = canTeleport;
         this.canSwim = canSwim;
     }
 
-    // Method to handle flying
     public String fly() {
         if (hasWings) {
             return name + " is flying";

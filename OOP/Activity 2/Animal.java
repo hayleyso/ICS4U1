@@ -1,16 +1,11 @@
-/**
- * Represents an animal with attributes such as class, species, name, age,
- * and domestication status, along with behaviors like eating, sleeping, etc.
- */
 public class Animal {
-    // declare instance variables
+
     private String animalClass;
     private String species;
-    private String name;
+    protected String name;
     private int age;
     private boolean isDomesticated;
 
-    // Constructor
     public Animal(String animalClass, String species, String name, int age, boolean isDomesticated) {
         this.animalClass = animalClass;
         this.species = species;

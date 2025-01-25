@@ -3,6 +3,6 @@ public class Circle extends Shape {
         System.out.println("O");
     }
     public void erase() {
-        System.out.println("We erase the O")
+        System.out.println("We erase the O");
     }
 }

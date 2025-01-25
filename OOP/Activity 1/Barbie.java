@@ -1,12 +1,10 @@
-// Barbie.java
 public class Barbie extends Toy {
-    // Additional characteristics specific to Barbie
+
     private String hairColor;
     private double height;
 
-    // Constructor for Barbie class, which uses the parent class constructor
     public Barbie(String name, double cost, double sellingPrice, String hairColor, double height) {
-        super(name, cost, sellingPrice); // Call the constructor of the Toy class
+        super(name, cost, sellingPrice); 
         this.hairColor = hairColor;
         this.height = height;
     }
@@ -31,13 +29,11 @@ public class Barbie extends Toy {
         return super.getProfit(); 
     }
 
-    // Barbie-specific action method
     public void changeHairColor(String newColor) {
         setHairColor(newColor);
         System.out.println("Barbie's hair color has been changed to " + newColor);
     }
 
-    // Display Barbie-specific information
     public void displayInfo() {
         System.out.println("Barbie Name: " + getName());
         System.out.println("Hair Color: " + getHairColor());

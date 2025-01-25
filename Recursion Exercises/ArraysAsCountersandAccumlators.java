@@ -12,7 +12,7 @@ public class ArraysAsCountersandAccumlators {
         num = sc.nextInt();
 
         while (num > 0 && num < 11) {
-            list[num - 1]++;      //list[num-1] = list[num-1] + 1
+            list[num - 1]++;     
             System.out.println("Please enter a number.");
             num = sc.nextInt();
         }

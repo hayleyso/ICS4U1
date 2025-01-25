@@ -3,6 +3,6 @@ public class Square extends Shape {
         System.out.println("[]");
     }
     public void erase() {
-        System.out.println("We erase the []")
+        System.out.println("We erase the []");
     }
 }

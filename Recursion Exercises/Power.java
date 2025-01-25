@@ -14,17 +14,13 @@ public class Power {
         System.out.printf("The value of " + base + " to the power of " + exp + " is %.2f", dPower);
     }
 
-    // Recursive method to calculate the power of a number
     public static double Pow(double b, int e) {
-        // Base case
         if (e == 0 || b==1) {
             return 1;
         }
-        // Positive exponent
         if (e > 0) {
             return b * Pow(b, e - 1);
         }
-        // Negative exponent
         else {
             return 1 / Pow(b, e);
         }

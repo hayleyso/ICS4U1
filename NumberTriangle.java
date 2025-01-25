@@ -8,7 +8,6 @@ public class NumberTriangle {
         sc.close();
     } 
 
-    // Method to print the number triangle
     public static void triangle(int number) {
         for (int i=1; i<=number; i++) {   
             for (int j=1; j<=i; j++) {  
