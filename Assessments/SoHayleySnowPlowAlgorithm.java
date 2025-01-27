@@ -2,9 +2,7 @@ package Assessments;
 /* Author: Hayley So
  * Date: October 31, 2024
  * JDK version: 22.0.2
- * Description: This program simulates a snow plow clearing operation using recursion. It generates a grid where 1s
- *              represent snow to be cleared and 2s represent obstacles. The plow starts from the first element in the
- *              first row and recursively clears connected areas of snow until it reaches an obstacle. 
+ * Description: This program simulates a snow plow clearing operation using recursion. It generates a grid where 1s represent snow to be cleared and 2s represent obstacles. The plow starts from the first element in the first row and recursively clears connected areas of snow until it reaches an obstacle. 
  */
 
 import java.util.InputMismatchException; // Import for handling input errors
@@ -30,7 +28,7 @@ public class SoHayleySnowPlowAlgorithm {
             // Loop for error handling
             while (true) {
                 // Try-catch block to handle invalid input
-                try {  
+                try {
                     // Prompt user to enter dimensions of the grid
                     System.out.println("Please enter the number of rows:");
                     row = sc.nextInt();
@@ -39,15 +37,15 @@ public class SoHayleySnowPlowAlgorithm {
 
                     // Check if dimensions are positive integers
                     if (row > 0 && col > 0) {
-                        break;  // Exit loop if valid input
-                    } else {    // Display error message if input is invalid
+                        break; // Exit loop if valid input
+                    } else { // Display error message if input is invalid
                         System.out.println("Invalid. Both dimensions must be positive integers.");
                     }
-                } catch (InputMismatchException e) {    // Catch invalid input
+                } catch (InputMismatchException e) { // Catch invalid input
                     System.out.println("Invalid input. Please enter integers only.");
                     sc.nextLine(); // Clear the invalid input
                 } // End try-catch block
-            } 
+            }
             int[][] arr = new int[row][col]; // Create a 2D array with user-defined dimensions
             fill(arr); // Call fill method
 
@@ -58,10 +56,10 @@ public class SoHayleySnowPlowAlgorithm {
             boolean isPlowUsed = false;
             // Scan for first '1' in the first row
             for (int i = 0; i < arr[0].length; i++) {
-                if (arr[0][i] == 1) {   // Check if element is a 1
+                if (arr[0][i] == 1) { // Check if element is a 1
                     clear(arr, 0, i); // Call clear method with coordinates of the first 1
-                    isPlowUsed = true;  // Set flag to true
-                    break;              // Exit loop after clearing first 1
+                    isPlowUsed = true; // Set flag to true
+                    break; // Exit loop after clearing first 1
                 }
             }
             // Display grid after clearing
@@ -136,8 +134,8 @@ public class SoHayleySnowPlowAlgorithm {
      * Clears snow recursively from a 2D array
      * 
      * @param int[][] arr - the 2D array to be cleared
-     * @param int x - the x-coordinate of the current cell
-     * @param int y - the y-coordinate of the current cell
+     * @param int     x - the x-coordinate of the current cell
+     * @param int     y - the y-coordinate of the current cell
      * @return void
      * @throws InterruptedException
      */

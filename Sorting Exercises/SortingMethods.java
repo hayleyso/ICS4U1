@@ -138,7 +138,6 @@ public class SortingMethods {
     }
 
     // Helper method for Quick Sort
-    // Places pivot at correct position, smaller elements left, larger right
     public static int partition(int[] arr, int low, int high) {
         int pivot = arr[high];
         int i = (low - 1);
@@ -160,16 +159,16 @@ public class SortingMethods {
         arr[j] = temp;
     }
 
+    // Merge Sort
     public static void mergeSort(int[] list) {
         if (list.length < 2) {
-            return; // Base case: if the array has less than 2 elements, it's already sorted
+            return; 
         }
         
         int mid = list.length / 2;
         int[] left = new int[mid];
         int[] right = new int[list.length - mid];
         
-        // Split the array into left and right halves
         for (int i = 0; i < mid; i++) {
             left[i] = list[i];
         }
@@ -180,14 +179,13 @@ public class SortingMethods {
         mergeSort(left);
         mergeSort(right);
         
-        // Merge the sorted halves
         merge(list, left, right);
     }
     
+    // Helper method to merge two arrays
     private static void merge(int[] list, int[] left, int[] right) {
         int i = 0, j = 0, k = 0;
     
-        // Merge the two arrays
         while (i < left.length && j < right.length) {
             if (left[i] <= right[j]) {
                 list[k++] = left[i++];
@@ -196,28 +194,24 @@ public class SortingMethods {
             }
         }
     
-        // Copy remaining elements from left array 
         while (i < left.length) {
             list[k++] = left[i++];
         }
     
-        // Copy remaining elements from right array 
         while (j < right.length) {
             list[k++] = right[j++];
         }
     }
     
+    // Heap Sort
     public static void heapSort(int[] list) {
         int n = list.length;
     
-        // Build heap (rearrange array)
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(list, n, i);
         }
     
-        // One by one extract elements from heap
         for (int i = n - 1; i >= 0; i--) {
-            // Move current root to end
             swap(list, 0, i);
             heapify(list, i, 0);
         }

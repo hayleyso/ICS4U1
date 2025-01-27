@@ -25,7 +25,7 @@ public class SearchingExercise1 {
                     phoneNumber[i] = sc.nextLine();
 
                     if (phoneNumber[i].matches("\\d{3}-\\d{3}-\\d{4}")) {
-                        break; // exit the loop if the phone number is valid
+                        break; 
                     } else {
                         System.out.println("Invalid phone number. Please enter a valid phone number.");
                     }

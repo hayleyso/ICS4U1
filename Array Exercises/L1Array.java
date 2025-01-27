@@ -1,10 +1,3 @@
-/* Author: Hayley So
- * Description: Array Exercise for ICS4U1 class.
- * Purpose: To perform various operations on an array of integers.
- * Date: 09/18/2024
- * JDK version: 22.02
- */
-
 import java.util.*;
 import java.text.DecimalFormat; 
 
