@@ -64,6 +64,8 @@ public class ArrayList_Teach_Quiz {
     System.out.println("Press a key to continue");
     input = kb.nextLine();
 
+    kb.close();
+
     // Pros of an ArrayList
     // 1. ArrayLists are dynamic in size, meaning that they can grow or shrink in size
     // 2. ArrayLists are more flexible and can change length while the program is running

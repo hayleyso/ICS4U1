@@ -12,6 +12,8 @@ public class Power {
         double dPower = Pow(base, exp);
 
         System.out.printf("The value of " + base + " to the power of " + exp + " is %.2f", dPower);
+
+        sc.close();
     }
 
     public static double Pow(double b, int e) {

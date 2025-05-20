@@ -51,6 +51,7 @@ public class ArrayList1 {
 
             System.out.println("Would you like to return to the menu? (y/n): ");
             String returnOption = sc.nextLine().trim().toLowerCase();
+            
             if (returnOption.equals("n")) {
                 System.out.println("Thank you for using the program!");
                 break;
@@ -82,7 +83,7 @@ public class ArrayList1 {
         for (int i = 0; i < 10; i++) {
             System.out.print("Please enter an integer: ");
             list.add(i, sc.nextInt());
-            sc.nextLine();  // Clear buffer
+            sc.nextLine(); 
         }
     }
 

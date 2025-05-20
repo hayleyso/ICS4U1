@@ -8,6 +8,7 @@ public class BunnyEars2 {
         int bunnies = sc.nextInt();
         int ears =  bunnyEars(bunnies);
         System.out.println(ears);
+        sc.close();
     }
 
     public static int bunnyEars(int n) {
